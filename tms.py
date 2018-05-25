@@ -45,7 +45,7 @@ while (len(client_sockets)) > 0:
         if k == 'close_session':
             client.close()
             client_sockets.remove(client)
-        v += '/n' + k
+        v = k
         client.send(v)
     except: pass
 
