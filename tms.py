@@ -42,11 +42,11 @@ while (len(client_sockets)) > 0:
     #check if client is alive or closed the connection
     try:
         k = client.recv(1)
-            if k =='':
-                client.close()
-                client_sockets.remove(client)
-            v += k
-            client.send(v)
+        if k =='':
+            client.close()
+            client_sockets.remove(client)
+        v += k
+        client.send(v)
     except: pass
 
 # close the connection
