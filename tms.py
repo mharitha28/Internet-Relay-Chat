@@ -10,7 +10,7 @@ import sys
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # associate the socket with a port
-host = ’’ # can leave this blank on the server side
+host = '' # can leave this blank on the server side
 port = int(sys.argv[1])
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind((host, port))
