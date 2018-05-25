@@ -35,7 +35,7 @@ while(1):
     #if not data: # if end of data, leave loop
     #    break
     #print 'received', len(data), 'bytes'
-    print data
+    print(data)
 
 # close the connection
 s.close()

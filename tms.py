@@ -50,4 +50,4 @@ while (len(client_sockets)) > 0:
     except: pass
 
 # close the connection
-conn.close()
+s.close()
