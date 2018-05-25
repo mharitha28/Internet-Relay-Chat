@@ -34,6 +34,7 @@ for i in range(nc):
     client.setblocking(0)
     client_sockets.append(client)
 
+client.recv(20)
 #loop through clients, aways accepting input from whoever is ready, if any, until no clients are left
 while (len(client_sockets)) > 0:
     #get next client, with effect of a circular queue
