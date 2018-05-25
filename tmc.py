@@ -20,13 +20,13 @@ host = sys.argv[1] # server address
 port = int(sys.argv[2]) # server port
 s.connect((host, port))
 
-s.sendall(sys.argv[3]) # send test string 19
+s.sendall(sys.argv[3].encode('utf-8')) # send test string 19
 # read echo
-i=0
+
 while(1):
     #get letter
-    k = raw_input('Send some message')
-    s.send(k)
+    k = input('Send some message')
+    s.sendall(k.encode('utf-8'))
     if k == '': break
     data = s.recv(1024) # read up to 1024 bytes
     #i += 1
