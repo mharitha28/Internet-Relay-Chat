@@ -43,7 +43,8 @@ while (len(client_sockets)) > 0:
     #check if client is alive or closed the connection
     try:
         k = client.recv(20)
-        if k == 'close_session':
+        print(k)
+        if k == 'close':
             client.close()
             client_sockets.remove(client)
         v = k
