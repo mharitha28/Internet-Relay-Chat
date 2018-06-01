@@ -17,19 +17,19 @@ class IRCClient():
         # connect to server
         self.server_connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server_connection.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-            self.server_connection.connect((CONSTANT.HOST, CONSTANTS.PORT))
+        self.server_connection.connect((CONSTANTS.HOST, CONSTANTS.PORT))
         
         #Register the client with the provided name
         serverMsg = {}
         serverMsg["command"] = "NICKNAME"
         serverMsg["name"] = self.name
-        self.server_connection.send(json.dumps(serverMsg))
+        self.server_connection.send(json.dumps(serverMsg).encode())
         print("You are now connected to Server!!")
     #end __init__
     
     # Prompt format for the client to enter their commands
-    def promt(self):
-        print("<" + self.name + ">", end = '', flush=True)
+    def prompt(self):
+        print("<" + self.name + ">", "end = ''", "flush=False")
     #end prompt
     
     # Create a room on the IRC server as requested by client
@@ -100,7 +100,7 @@ class IRCClient():
                 #Incoming server response
                 if s in self.server_connection:
                     #Get server response and display
-                    message = s.recv(1024)
+                    message = s.recv(1024).decode()
     
                     #No message indicates the server is down
                     if not message:
@@ -127,17 +127,17 @@ class IRCClient():
                             self.listRooms()
                         
                         # Client wants to join a room
-                        elif command == "JOINROOM"
+                        elif command == "JOINROOM":
                             roomName = message.split(" ", 1)[1]
                             self.joinRoom(roomName)
                         
                         # Client wants to leave a room
-                        elif command == "LEAVEROOM"
+                        elif command == "LEAVEROOM":
                             roomName = message.split(" ", 1)[1]
                             self.leaveRoom(roomName)
                                 
                         # Client wants a list of members in a room
-                        elif command == "LISTROOMCLIENTS"
+                        elif command == "LISTROOMCLIENTS":
                             roomName = message.split(" ", 1)[1]
                             self.listRoomClients(roomName)
                         
@@ -148,7 +148,7 @@ class IRCClient():
                             self.msgRoom(parse[1], parse[2])
                         
                         # Client wants to terminate the program
-                        elif command == "EXIT"
+                        elif command == "EXIT":
                             print("Exiting from Chat")
                             self.server_connection.close()
                             sys.exit(0)
@@ -163,7 +163,7 @@ class IRCClient():
                         print("Command received too few arguments! Please try again!")
                         self.prompt()
                         continue
-        )
+        
 
     #end run
 #end IRCClient

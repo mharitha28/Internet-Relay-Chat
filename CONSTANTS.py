@@ -1,7 +1,7 @@
 #defines constants here
 HOST='127.0.0.1'       # Local Host
 #HOST='162.243.139.14' # Cloud Host
-PORT=10005
+PORT=8080
 
 # required parameters for AES encryption
 KEY='a1b4c6d1efgh5678'# key shared between server and client only
