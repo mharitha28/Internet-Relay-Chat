@@ -1,0 +1,21 @@
+
+********************** COMMAND DESCRIPTION **************************
+
+#####################################################################
+#  LR   - LIST OF ROOMS                                             #
+#  CR   - CREATE A ROOM [ROOM_NAME]                                 #
+#  JR   - JOIN A ROOM [ROOM_NAME]                                   #
+#  LER  - LEAVE A ROOM [ROOM_NAME]                                  #
+#  LC   - LIST OF CLIENTS                                           #
+#  LRC  - LIST OF ROOM CLIENTS [ROOM_NAME]                          #
+#  MR   - SEND MESSAGE TO A ROOM [ROOM_NAME] [MESSAGE]              #
+#  PM   - SEND A PRIVATE MESSAGE [CLIENT_NAME] [MESSAGE]            #
+#  SFR  - SEND FILE TO ROOM [ROOM_NAME] [FILE_NAME]                 #
+#  SFP  - SEND FILE TO ANOTHER CLIENT [CLIENT_NAME] [FILE_NAME]     #
+#  EXIT - EXIT IRC                                                  #
+#  HELP - LIST OF IRC COMMANDS                                      #
+#####################################################################
+
+
+
+
