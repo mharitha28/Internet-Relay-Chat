@@ -2,7 +2,7 @@
 #                    Haritha Munagala, Susham Yerabolu              #
 #                    CS 594 Internetworking Protocols               #
 #                             Spring 2018                           #
-#                    Internet Relay Chat Group Project              #
+#                              IRC Client                           #
 #####################################################################
 
 #--------------------------------------------------------------------#

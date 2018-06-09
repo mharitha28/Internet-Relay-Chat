@@ -1,10 +1,11 @@
-#########################################################################
-# IRC Server
-# Haritha Munagala, Susham Yerabolu
-# See LICENSE.txt for license information
-#########################################################################
+#####################################################################
+#                    Haritha Munagala, Susham Yerabolu              #
+#                    CS 594 Internetworking Protocols               #
+#                             Spring 2018                           #
+#                              IRC Server                           #
+#####################################################################
 
-#########################################################################
+#--------------------------------------------------------------------#
 # Python Imports
 import socket
 import sys
@@ -14,11 +15,11 @@ import CONSTANTS
 import json
 from Crypto.Cipher import AES
 from Crypto import Random
-#########################################################################
+#--------------------------------------------------------------------#
 
-#########################################################################
+#--------------------------------------------------------------------#
 # Encryption Functions for Secure Messaging
-#########################################################################
+#--------------------------------------------------------------------#
 # Adds padding to data keep block size = FIXED_BLOCK_SIZE
 def add_padding(data, interrupt, pad, block_size):
     new_data = ''.join([data, interrupt])
@@ -55,23 +56,23 @@ def decrypt_n_decode(data):
     decrypted_padded_data = decrypted_padded_data.decode('UTF-8')
     decrypted_data = strip_padding(decrypted_padded_data, CONSTANTS.INTERRUPT, CONSTANTS.PAD)
     return decrypted_data
-#########################################################################
+#--------------------------------------------------------------------#
 
-#########################################################################
+#--------------------------------------------------------------------#
 # IRC Room
 # This class defines what an IRC room is. An IRC room contains the room
 # name along with a dictionary of the clients that are part of that room
-#########################################################################
+#--------------------------------------------------------------------#
 class IRCRoom():
     def __init__(self, name):
         self.name = name #Name of the room
         self.roomClients = {} #Dictionary containing all clients that are part of the room
-#########################################################################
+#--------------------------------------------------------------------#
 
-#########################################################################
+#--------------------------------------------------------------------#
 # IRC Server
 # This class defines the IRC server. 
-#########################################################################
+#--------------------------------------------------------------------#
 class IRCServer(threading.Thread):
     # Initializes variables and data structures for keeping track of rooms and connected clients
     def __init__(self, host, port):
@@ -461,13 +462,13 @@ class IRCServer(threading.Thread):
                         continue
 
         self.serverSocket.close() #Technically, unreachable code.
-#########################################################################
+#--------------------------------------------------------------------#
 
-#########################################################################
+#--------------------------------------------------------------------#
 # Main function
 # This function creates an IRCServer object and starts the server to 
 # listen for incoming connections
-#########################################################################
+#--------------------------------------------------------------------#
 def main():
     server = IRCServer(CONSTANTS.HOST, CONSTANTS.PORT)
     server.start()

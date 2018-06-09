@@ -1,3 +1,9 @@
+#####################################################################
+#                    Haritha Munagala, Susham Yerabolu              #
+#                    CS 594 Internetworking Protocols               #
+#                             Spring 2018                           #
+#####################################################################
+
 #defines constants here
 HOST='127.0.0.1'       # Local Host
 #HOST='162.243.139.14' # Cloud Host
