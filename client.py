@@ -209,9 +209,7 @@ class IRCClient():
 
         while True:
             read, write, error = select.select(socket_list, [], [])
-            print(read)
             for s in read:
-                print(s)
                 # Incoming server response
                 if s is self.server_connection:
                     # Get server response and display
